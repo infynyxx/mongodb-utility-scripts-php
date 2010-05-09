@@ -1,6 +1,11 @@
 <?php
 
 
+/**
+ * Script to delete MongoDB temporary collections
+ * generally MongoDB tends to flush temporary collections but sometimes, it fails to do so leaving large number of unwanted collections
+ */
+
 function delete_temporary_collection($dbname)	{
 	$connection = new Mongo();
 	$mongodb = $connection->$dbname;
