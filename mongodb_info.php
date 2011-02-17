@@ -194,7 +194,7 @@ class MongoDB_Info	{
 	
 	public function get_current_operations()	{
 		if (isset(self::$current_db))	{
-			return self::$current_db->selectCollection('$cmd.sys.inprog')->find(array('$all' => 1)) ;
+			return self::$current_db->selectCollection('$cmd.sys.inprog')->findOne();
 		}
 		return Array();
 	}
